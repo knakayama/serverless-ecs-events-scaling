@@ -1,0 +1,26 @@
+{
+  "name": "serverless-ecs-events-scaling",
+  "version": "0.0.1",
+  "description": "serverless ecs events scaling",
+  "repository": "git@github.com:knakayama/serverless-ecs-events-scaling.git",
+  "author": "knakayama <knakayama.sh@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "for handler in src/handlers/*; do (cd $handler && pwd && yarn); done",
+    "deploy": "$(yarn bin)/sls deploy -v",
+    "logs": "$(yarn bin)/sls logs -t -f $function_name",
+    "deploy:function": "$(yarn bin)/sls deploy function -v -f $function_name",
+    "remove": "$(yarn bin)/sls remove -v"
+  },
+  "dependencies": {
+    "serverless": "1.15.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0"
+  }
+}

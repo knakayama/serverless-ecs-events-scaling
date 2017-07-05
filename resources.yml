@@ -1,0 +1,15 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Serverless ECS Events Scaling Stack
+
+Parameters:
+  RetentionInDays:
+    Type: String
+    Default: ${self:custom.config.retentionInDays}
+
+Resources:
+  ScalingLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      RetentionInDays:
+        Ref: RetentionInDays
