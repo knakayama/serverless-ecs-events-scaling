@@ -42,5 +42,8 @@ functions:
               - "aws.ecs"
             detail-type:
               - "ECS Container Instance State Change"
+            detail:
+              clusterArn:
+                - Fn::Join: [ "", [ "arn:aws:ecs:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":cluster/${self:custom.config.ecsClusterName}" ] ]
 
 resources: ${file(resources.yml)}

@@ -2,3 +2,4 @@ stage: v0
 region: ap-northeast-1
 retentionInDays: 90
 ecsServiceName: _YOUR_ECS_SERVICE_NAME_
+ecsClusterName: _YOUR_CLUSTER_NAME_
